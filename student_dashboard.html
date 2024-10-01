@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="css/student_css.css"> <!-- Link to external CSS file -->
+    <style>
+        /* Adjust scaling for mobile screens */
+        @media (max-width: 768px) {
+            body {
+                transform: scale(0.9); /* Shrink content */
+                transform-origin: 0 0; /* Shrink from top-left corner */
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                transform: scale(0.8); /* Further shrink for smaller screens */
+                transform-origin: 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        
+    </div>
+    <div class="navbar">
+        <div class="menu-button" onclick="toggleMenu()">☰</div>
+        <div class="centered-content">
+            <h1>Anil Links</h1>
+            <span>Vardhaman College of Engineering</span>
+        </div>
+    </div>
+
+    <div id="sideMenu" class="side-menu">
+        <a href="javascript:void(0)" class="close-button" onclick="toggleMenu()">×</a> <!-- Close button -->
+        <a href="https://anil-asj.github.io/Clg_website" class="menu-item">Student Details</a>
+        <a href="https://login.vardhaman.org/" class="menu-item">Vardhaman NEW ERP</a>
+        <a href="https://studentscorner.vardhaman.org/" class="menu-item">Vardhaman OLD ERP</a>
+    </div>
+
+    <div class="links-container">
+        <a href="https://tp444.in/#/login" class="referral-link" target="_blank">TP_PLAY</a>
+        <a href="https://51game3.com/#/login" class="referral-link" target="_blank">51GAMES</a>
+        <a href="https://nngmas66.com/#/login" class="referral-link" target="_blank">NN GAMES</a>
+        <a href="https://6club55.in/#/login" class="referral-link" target="_blank">6CLUB55</a>
+        <a href="https://sikkim1.com/#/login" class="referral-link" target="_blank">SIKKIM</a>
+    </div>
+
+
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("sideMenu");
+            menu.style.width = menu.style.width === "250px" ? "0" : "250px";
+        }
+    </script>
+</body>
+</html>

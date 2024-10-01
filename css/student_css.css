@@ -1,0 +1,134 @@
+/* Center content in the navbar */
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between; /* Space between the menu and centered content */
+    align-items: center;
+    height: 100px;
+    position: relative;
+}
+
+.navbar h1, .navbar span {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu-button {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-right: auto; /* Align the button to the left */
+}
+
+.side-menu {
+    width: 0;
+    transition: 0.5s;
+    overflow-x: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: white;
+    height: 100%;
+    padding-top: 60px;
+    z-index: 1; /* Ensure the menu is on top */
+}
+
+.side-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: #575757;
+}
+
+/* Styling for the close button */
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 2px;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.links-container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Create 3 equal columns */
+    gap: 3px; /* Further reduced horizontal gap between the grid items */
+    justify-items: center; /* Center the items horizontally */
+    padding: 50px;
+}
+
+
+.referral-link {
+    display: block;
+    margin: 20px ; /* Reduced vertical margin between links */
+    font-size: 30px; /* Base font size */
+    text-decoration: none;
+    color: #333;
+    padding: 15px 20px; /* Smaller padding to reduce the box size */
+    border: 1px solid #333; /* Maintain a thin border */
+    border-radius: 4px; /* Slightly round the corners */
+    width: fit-content; /* Adjust the width to fit the text content */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* Change sizes for smaller screens */
+@media (max-width: 768px) {
+    .referral-link {
+        font-size: 14px; /* Smaller font size for mobile */
+        padding: 6px 10px; /* Reduce padding for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .referral-link {
+        font-size: 12px; /* Even smaller font size for very small screens */
+        padding: 4px 8px; /* Further reduce padding */
+    }
+}
+
+.referral-link:hover {
+    background-color: #333;
+    color: white;
+}
+
+.drop-zone {
+    border: 2px dashed #333; /* Dashed border for the drop zone */
+    border-radius: 8px; /* Slightly round the corners */
+    width: 500px; /* Set width to 500px (adjust as needed) */
+    height: 200px; /* Set height to 300px (adjust as needed) */
+    margin: 20px auto; /* Center the drop zone horizontally */
+    display: flex; /* Use flexbox for centering the content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    background-color: #f9f9f9; /* Light background color */
+    text-align: center; /* Center text inside */
+    cursor: pointer; /* Pointer cursor to indicate clickability */
+}
+
+.hero{
+    width : 100%;
+    min-width: 100vh;
+    background: linear-gradient(#e7baff,#c2b6d9);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Options</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Main CSS file -->
+    <style>
+        /* Optional: Add this for smooth scaling effect */
+        body {
+            transition: transform 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body onload="autoShrinkPage()">
+    <div class="dropdown-container">
+        <label for="login-type">LOGIN</label>
+        <select id="login-type" name="login-type" onchange="showPopup()">
+            <option value="">Select...</option>
+            <option value="student">Student Login</option>
+            <option value="staff">Staff Login</option>
+            <option value="hod">HOD Login</option>
+        </select>
+    </div>
+
+    <!-- The Popup -->
+    <div id="myPopup" class="popup">
+        <div class="login-container">
+            <img src="css/photos/vardhamanlogo.png" alt="College Logo" class="logo"> <!-- Replace with your logo file -->
+            <h2 id="popup-title">Login</h2>
+            <form onsubmit="return validateLogin(event)">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter password" required>
+                </div>
+                <button type="submit">Login</button>
+                <div class="footer">
+                    <p>Forgot your password?</p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="overlay-text">Vardhaman College of Engineering</div>
+
+    <script>
+        function showPopup() {
+            var dropdown = document.getElementById("login-type");
+            var selectedValue = dropdown.options[dropdown.selectedIndex].value;
+
+            var popupTitle = document.getElementById("popup-title");
+            var usernameInput = document.getElementById("username");
+            var passwordInput = document.getElementById("password");
+
+            if (selectedValue === "student") {
+                popupTitle.innerText = "Student Login";
+                usernameInput.placeholder = "Enter student email";
+                passwordInput.placeholder = "Enter student password";
+            } else if (selectedValue === "staff") {
+                popupTitle.innerText = "Staff Login";
+                usernameInput.placeholder = "Enter staff email";
+                passwordInput.placeholder = "Enter staff password";
+            } else if (selectedValue === "hod") {
+                popupTitle.innerText = "HOD Login";
+                usernameInput.placeholder = "Enter HOD email";
+                passwordInput.placeholder = "Enter HOD password";
+            }
+
+            if (selectedValue) {
+                document.getElementById("myPopup").style.display = "block";
+            } else {
+                closePopup();
+            }
+        }
+
+        function closePopup() {
+            document.getElementById("myPopup").style.display = "none";
+        }
+
+        function validateLogin(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check credentials
+            if (username === "Anil" && password === "Anil5698") {
+                // Redirect to a new page on successful login
+                window.location.href = "student_dashboard.html"; // Update with the correct URL
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+
+        // Function to automatically shrink the page when opened
+        function autoShrinkPage() {
+            document.body.style.transform = "scale(0.9)";  // Adjust the scale to shrink
+            document.body.style.transformOrigin = "0 0";   // Ensure the page scales from the top-left corner
+        }
+    </script>
+</body>
+</html>
